@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: fiap-hackathon-pessoas
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak.local:7777/auth/realms/vodafone
+
+aws:
+  accessKeyId: local
+  secretAccessKey: local
+  region: us-west-2
+  dynamo:
+    uri: http://localhost:8000
+
+management:
+  health:
+    probes:
+      enabled: true
+  endpoint:
+    loggers:
+      enabled: true
+    health:
+      probes:
+        enabled: true
+      show-details: "ALWAYS"
+  endpoints:
+    web:
+      exposure:
+        include: "*"
