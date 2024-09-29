@@ -16,12 +16,13 @@ service:
 ingress:
   enabled: true
   className: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
   hosts:
-    - host: "pessoas.local.io"
+    - host: "hackathon.local.io"
       paths:
-        - path: /pessoas/
-          pathType: Prefix
-          portName: http
+        - path: /pessoas(/|$)(.*)
+          pathType: ImplementationSpecific
 
 resources: { }
 podAnnotations: { }

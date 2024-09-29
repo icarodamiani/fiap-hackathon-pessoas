@@ -2,4 +2,4 @@ aws:
   accessKeyId: local
   secretAccessKey: local
   dynamo:
-    uri: http://localhost:8000
+    uri: http://dockerhost:8000

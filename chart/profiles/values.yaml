@@ -24,7 +24,7 @@ ingress:
   hosts:
     - host:
       paths:
-        - path: /pessoas/
+        - path: /
           pathType: Prefix
           portName: http
 
