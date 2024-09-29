@@ -5,10 +5,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${OIDC_PROVIDER_ISSUER:http://dockerhost:7777/auth/realms/vodafone}
-
-aws:
-  region: us-east-1
+          issuer-uri: http://keycloak/realms/fiap
 
 management:
   health:

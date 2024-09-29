@@ -14,15 +14,7 @@ service:
   port: 8080
 
 ingress:
-  enabled: true
-  className: "nginx"
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
-  hosts:
-    - host: "hackathon.local.io"
-      paths:
-        - path: /pessoas(/|$)(.*)
-          pathType: ImplementationSpecific
+  enabled: false
 
 resources: { }
 podAnnotations: { }

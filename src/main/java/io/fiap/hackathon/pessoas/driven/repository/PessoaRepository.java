@@ -21,7 +21,7 @@ import software.amazon.awssdk.services.dynamodb.model.UpdateItemRequest;
 
 @Repository
 public class PessoaRepository {
-    private static final String TABLE_NAME = "pessoas_tb.json";
+    private static final String TABLE_NAME = "pessoas_tb";
 
     private final DynamoDbAsyncClient client;
 
