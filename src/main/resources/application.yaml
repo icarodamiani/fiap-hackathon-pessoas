@@ -5,14 +5,10 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://keycloak.local:7777/auth/realms/vodafone
+          issuer-uri: ${OIDC_PROVIDER_ISSUER:http://dockerhost:7777/auth/realms/vodafone}
 
 aws:
-  accessKeyId: local
-  secretAccessKey: local
-  region: us-west-2
-  dynamo:
-    uri: http://localhost:8000
+  region: us-east-1
 
 management:
   health:
