@@ -1,7 +1,7 @@
 package io.fiap.hackathon.pessoas.driven.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.fiap.hackathon.pessoas.driven.client.dto.PessoaDataCleanupMessage;
+import io.fiap.hackathon.pessoas.driven.client.dto.PessoaExclusaoDadosMessage;
 import io.fiap.hackathon.pessoas.driven.exception.BusinessException;
 import io.fiap.hackathon.pessoas.driven.port.MessagingPort;
 import io.vavr.CheckedFunction1;
@@ -46,11 +46,11 @@ public class LgpdService {
         return messagingPort.read(queue, handle(), readEvent());
     }
 
-    private CheckedFunction1<Message, PessoaDataCleanupMessage> readEvent() {
-        return message -> objectMapper.readValue(message.body(), PessoaDataCleanupMessage.class);
+    private CheckedFunction1<Message, PessoaExclusaoDadosMessage> readEvent() {
+        return message -> objectMapper.readValue(message.body(), PessoaExclusaoDadosMessage.class);
     }
 
-    private Function1<PessoaDataCleanupMessage, Mono<PessoaDataCleanupMessage>> handle() {
+    private Function1<PessoaExclusaoDadosMessage, Mono<PessoaExclusaoDadosMessage>> handle() {
         return request -> Mono.just(request)
             .flatMap(r -> pessoaService.deleteById(r.getId()))
             .then(Mono.just(request));

@@ -4,11 +4,10 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
-@JsonSerialize(as = ImmutablePessoaDataCleanupMessage.class)
-@JsonDeserialize(as = ImmutablePessoaDataCleanupMessage.class)
+@JsonSerialize(as = ImmutablePessoaExclusaoDadosMessage.class)
+@JsonDeserialize(as = ImmutablePessoaExclusaoDadosMessage.class)
 @Value.Immutable
 @Value.Style(privateNoargConstructor = true, jdkOnly = true)
-public abstract class PessoaDataCleanupMessage {
+public abstract class PessoaExclusaoDadosMessage {
     public abstract String getId();
-    public abstract String getDocumento();
 }
