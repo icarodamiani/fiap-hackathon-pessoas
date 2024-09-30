@@ -44,7 +44,7 @@ public class PessoaController {
         return pessoaService.deleteById(id);
     }
 
-    @GetMapping
+    @GetMapping(produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     @Operation(description = "Busca todas as pessoas")
     public Flux<PessoaDTO> fetch(@AuthenticationPrincipal Principal principal) {
         return pessoaService.fetch()

@@ -88,6 +88,30 @@
       "IndexSizeBytes": 0,
       "ItemCount": 0,
       "IndexArn": "arn:aws:dynamodb:ddblocal:000000000000:table/veiculos_reservas_tb/index/VeiculoIdIndex"
+    },
+    {
+      "IndexName": "CodigoReservaIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "CODIGO",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "EXPIRA_EM",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "IndexStatus": "ACTIVE",
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 3,
+        "WriteCapacityUnits": 3
+      },
+      "IndexSizeBytes": 0,
+      "ItemCount": 0,
+      "IndexArn": "arn:aws:dynamodb:ddblocal:000000000000:table/veiculos_reservas_tb/index/CodigoReservaIndex"
     }
   ]
 }
