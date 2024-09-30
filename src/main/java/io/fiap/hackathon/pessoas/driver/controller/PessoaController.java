@@ -54,7 +54,7 @@ public class PessoaController {
     @GetMapping("/{id}")
     @Operation(description = "Busca uma pessoa por seu ID")
     public Mono<PessoaDTO> fetchById(@PathVariable String id) {
-        return pessoaService.fetchById(id)
+        return pessoaService.findById(id)
             .map(pessoaMapper::dtoFromDomain);
     }
 }

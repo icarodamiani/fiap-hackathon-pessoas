@@ -27,7 +27,7 @@ public class PessoaService {
         return repository.fetch();
     }
 
-    public Mono<Pessoa> fetchById(String id) {
+    public Mono<Pessoa> findById(String id) {
         return repository.fetchById(id);
     }
 }
